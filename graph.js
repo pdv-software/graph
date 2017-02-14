@@ -62,8 +62,8 @@ $('#placeholder').bind("plothover", function (event, pos, item) {
             var item_value = item.datapoint[1];
 
             var d = new Date(item_time);
-            var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-            var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var days = [_Tr("Sun"),_Tr("Mon"),_Tr("Tue"),_Tr("Wed"),_Tr("Thu"),_Tr("Fri"),_Tr("Sat")];
+            var months = [_Tr("Jan"),_Tr("Feb"),_Tr("Mar"),_Tr("Apr"),_Tr("May"),_Tr("Jun"),_Tr("Jul"),_Tr("Aug"),_Tr("Sep"),_Tr("Oct"),_Tr("Nov"),_Tr("Dec")];
             var minutes = d.getMinutes();
             if (minutes<10) minutes = "0"+minutes;
             var date = d.getHours()+":"+minutes+" "+days[d.getDay()]+", "+months[d.getMonth()]+" "+d.getDate();
@@ -91,6 +91,21 @@ function graph_resize() {
     placeholder.width(width);
     placeholder_bound.height(height-top_offset);
     placeholder.height(height-top_offset);
+}
+
+function list_format_sum_value(bytes){
+  // format value to VALUE (K)ilo or (M)ega or (G)iga
+  if (!$.isNumeric(bytes)) {
+    return "n/a";
+  } else if (bytes<1000) {
+    return bytes;
+  } else if (bytes<1000*1000) {
+    return Math.round(bytes/1000)+" "+_Tr("k");
+  } else if (bytes<=1000*1000*1000000) {
+    return Math.round(bytes/(1000*1000000))+" "+_Tr("m");
+  } else {
+    return (bytes/(1000*1000*1000)).toFixed(1)+" "+_Tr("g");
+  }
 }
 
 function graph_init_editor()
@@ -162,17 +177,17 @@ function graph_init_editor()
     });
 
     $("#showcsv").click(function(){
-        if ($("#showcsv").html()=="Show CSV Output") {
+        if ($("#showcsv").html()=="CSV Output +") {
             printcsv()
             showcsv = 1;
             $("#csv").show();
             $(".csvoptions").show();
-            $("#showcsv").html("Hide CSV Output");
+            $("#showcsv").html("CSV Output -");
         } else {
             showcsv = 0;
             $("#csv").hide();
             $(".csvoptions").hide();
-            $("#showcsv").html("Show CSV Output");
+            $("#showcsv").html("CSV Output +");
         }
     });
     $(".csvoptions").hide();
@@ -426,7 +441,7 @@ function graph_reload()
                     valid = false;
                 }
                 
-                if (!valid) errorstr += "<div class='alert alert-danger'><b>Request error</b> "+data_in+"</div>";
+                if (!valid) errorstr += "<div class='alert alert-danger'><b>"+_Tr("Request error")+"</b> "+data_in+"</div>";
             }
         });
         
@@ -469,14 +484,15 @@ function graph_draw()
         lines: { fill: false },
         xaxis: { 
             mode: "time", timezone: "browser", 
-            min: view.start, max: view.end
+            min: view.start, max: view.end,
+            monthNames: Tr_monthNames, dayNames:Tr_dayNames
         },
-	      yaxes: [ { }, {
-			      // align if we are to the right
-			      alignTicksWithAxis: 1,
-			      position: "right"
-			      //tickFormatter: euroFormatter
-		    } ],
+            yaxes: [ { }, {
+            // align if we are to the right
+            alignTicksWithAxis: 1,
+            position: "right"
+            //tickFormatter: euroFormatter
+        } ],
         grid: {hoverable: true, clickable: true},
         selection: { mode: "x" },
         legend: { show: false, position: "nw", toggle: true },
@@ -498,7 +514,7 @@ function graph_draw()
         mins = "";
     }
     
-    if (!embed) $("#window-info").html("<b>Window:</b> "+printdate(view.start)+" > "+printdate(view.end)+", <b>Length:</b> "+hours+"h"+mins+" ("+time_in_window+" seconds)");
+    if (!embed) $("#window-info").html("<b>"+_Tr("Window")+":</b> "+printdate(view.start)+" > "+printdate(view.end)+", <b>"+_Tr("Length")+":</b> "+hours+"h"+mins+" ("+time_in_window+" seconds)");
     
     plotdata = [];
     for (var z in feedlist) {
@@ -545,27 +561,28 @@ function graph_draw()
             
             var selected = "";
             if (feedlist[z].plottype == "lines") selected = "selected"; else selected = "";
-            out += "<option value='lines' "+selected+">Lines</option>";
+            out += "<option value='lines' "+selected+">"+_Tr("Lines")+"</option>";
             if (feedlist[z].plottype == "bars") selected = "selected"; else selected = "";
-            out += "<option value='bars' "+selected+">Bars</option>";
+            out += "<option value='bars' "+selected+">"+_Tr("Bars")+"</option>";
             out += "</select></td>";
             out += "<td><input class='linecolor' feedid="+feedlist[z].id+" style='width:50px' type='color' value='#"+default_linecolor+"'></td>";
             out += "<td><input class='fill' type='checkbox' feedid="+feedlist[z].id+"></td>";
             var quality = Math.round(100 * (1-(feedlist[z].stats.npointsnull/feedlist[z].stats.npoints)));
-            out += "<td>"+quality+"% ("+(feedlist[z].stats.npoints-feedlist[z].stats.npointsnull)+"/"+feedlist[z].stats.npoints+")</td>";
+//            out += "<td><abbr title='"+feedlist[z].stats.npoints-feedlist[z].stats.npointsnull)+"/"+feedlist[z].stats.npoints+"'>"+quality+"%</abbr></td>";
+            out += "<td>"+quality+"% </td>";
             out += "<td>"+feedlist[z].stats.minval.toFixed(dp)+"</td>";
             out += "<td>"+feedlist[z].stats.maxval.toFixed(dp)+"</td>";
             out += "<td>"+feedlist[z].stats.diff.toFixed(dp)+"</td>";
             out += "<td>"+feedlist[z].stats.mean.toFixed(dp)+"</td>";
             out += "<td>"+feedlist[z].stats.stdev.toFixed(dp)+"</td>";
-            out += "<td>"+Math.round((feedlist[z].stats.mean*time_in_window)/3600)+"</td>";
+            out += "<td>"+list_format_sum_value(((feedlist[z].stats.mean)*time_in_window)/3600)+"</td>";
             for (var i=0; i<11; i++) out += "<option>"+i+"</option>";
             out += "</select></td>";
-            out += "<td style='text-align:center'><input class='scale' feedid="+feedlist[z].id+" type='text' style='width:50px' value='1.0' /></td>";
+            out += "<td style='text-align:center'><input class='scale' feedid="+feedlist[z].id+" type='text' style='width:30px' value='1.0' /></td>";
             out += "<td style='text-align:center'><input class='delta' feedid="+feedlist[z].id+" type='checkbox'/></td>";
             out += "<td style='text-align:center'><input class='getaverage' feedid="+feedlist[z].id+" type='checkbox'/></td>";
             out += "<td><select feedid="+feedlist[z].id+" class='decimalpoints' style='width:50px'><option>0</option><option>1</option><option>2</option><option>3</option></select></td>";
-            out += "<td><button feedid="+feedlist[z].id+" class='histogram'>Histogram <i class='icon-signal'></i></button></td>";
+            out += "<td><button feedid="+feedlist[z].id+" class='histogram'>"+_Tr("Histogram")+" <i class='icon-signal'></i></button></td>";
             // out += "<td><a href='"+apiurl+"'><button class='btn btn-link'>API REF</button></a></td>";
             out += "</tr>";
         }
@@ -772,7 +789,10 @@ $("#graph-select").change(function() {
     $("#graph-name").val(name);
     $("#graph-delete").show();
     var index = graph_index_from_name(name);
-    
+
+    if (index==-1) {
+      return false;
+    }
     // view settings
     view.start = savedgraphs[index].start;
     view.end = savedgraphs[index].end;
@@ -837,7 +857,7 @@ $("#graph-save").click(function() {
     var name = $("#graph-name").val();
     
     if (name==undefined || name=="") {
-        alert("Please enter a name for the graph you wish to save");
+        alert(_Tr("Please enter a name for the graph you wish to save"));
         return false;
     }
     
@@ -899,7 +919,7 @@ function graph_load_savedgraphs()
         success: function(result) {
             savedgraphs = result;
             
-            var out = "<option>Select graph:</option>";
+            var out = "<option>"+_Tr("Select graph")+":</option>";
             for (var z in savedgraphs) {
                var name = savedgraphs[z].name;
                out += "<option>"+name+"</option>";
@@ -1021,7 +1041,7 @@ function printdate(timestamp)
     var thisyear = date.getFullYear()-2000;
     
     var date = new Date(timestamp);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = [_Tr('Jan'),_Tr('Feb'),_Tr('Mar'),_Tr('Apr'),_Tr('May'),_Tr('Jun'),_Tr('Jul'),_Tr('Aug'),_Tr('Sep'),_Tr('Oct'),_Tr('Nov'),_Tr('Dec')];
     var year = date.getFullYear()-2000;
     var month = months[date.getMonth()];
     var day = date.getDate();

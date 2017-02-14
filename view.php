@@ -25,7 +25,9 @@
 <!--
 <script language="javascript" type="text/javascript" src="<?php echo $path;?>Lib/flot/flot.min.js"></script>
 -->
+<script type="text/javascript"><?php require "Modules/graph/graph_langjs.php"; ?></script>
 <script language="javascript" type="text/javascript" src="<?php echo $path;?>Modules/graph/vis.helper.js"></script>
+<script type="text/javascript"><?php require "Modules/graph/graph_constjs.php"; ?></script>
 
 <style>
 #wrapper {
@@ -55,9 +57,21 @@
 
 <div id="wrapper">
     <div id="sidebar-wrapper">
+            <div style="padding:10px;">
+                <h4><?php echo _("My Graphs"); ?></h4>
+                
+                <select id="graph-select" style="width:215px">
+                </select>
+                
+                <br><br>
+                <b><?php echo _("Graph Name"); ?>:</b><br>
+                <input id="graph-name" type="text" style="width:200px" />
+                <button id="graph-delete" class="btn" style="display:none"><?php echo _("Delete"); ?></button>
+                <button id="graph-save" class="btn"><?php echo _("Save"); ?></button>
+            </div>
             <div style="padding-left:10px;">
                 <div id="sidebar-close" style="float:right; cursor:pointer; padding:10px;"><i class="icon-remove"></i></div>
-                <h3>Feeds</h3>
+                <h4><?php echo _("Feeds"); ?></h4>
                 
             </div>
             <div style="overflow-x: hidden; background-color:#f3f3f3; width:100%">
@@ -65,42 +79,30 @@
                 </table>
             </div>
             
-            <div style="padding:10px;">
-                <h4>My Graphs</h4>
-                
-                <select id="graph-select" style="width:215px">
-                </select>
-                
-                <br><br>
-                <b>Graph Name:</b><br>
-                <input id="graph-name" type="text" style="width:200px" />
-                <button id="graph-delete" class="btn" style="display:none">Delete</button>
-                <button id="graph-save" class="btn">Save</button>
-            </div>
     </div>
 
     <div id="page-content-wrapper" style="max-width:1280px">
         
-        <h3>Data viewer</h3> 
+        <h3><?php echo _("Data viewer"); ?></h3> 
 
         <div id="error" style="display:none"></div>
 
         <div id="navigation" style="padding-bottom:5px;">
             <button class="btn" id="sidebar-open"><i class="icon-list"></i></button>
-            <button class='btn graph_time' type='button' time='1'>D</button>
-            <button class='btn graph_time' type='button' time='7'>W</button>
-            <button class='btn graph_time' type='button' time='30'>M</button>
-            <button class='btn graph_time' type='button' time='365'>Y</button>
+            <button class='btn graph_time' type='button' time='1'><?php echo _("D"); ?></button>
+            <button class='btn graph_time' type='button' time='7'><?php echo _("W"); ?></button>
+            <button class='btn graph_time' type='button' time='30'><?php echo _("M"); ?></button>
+            <button class='btn graph_time' type='button' time='365'><?php echo _("Y"); ?></button>
             <button id='graph_zoomin' class='btn'>+</button>
             <button id='graph_zoomout' class='btn'>-</button>
             <button id='graph_left' class='btn'><</button>
             <button id='graph_right' class='btn'>></button>
             
             <div class="input-prepend input-append" style="float:right; margin-right:22px">
-            <span class="add-on">Show</span>
-            <span class="add-on">missing data: <input type="checkbox" id="showmissing" style="margin-top:1px" /></span>
-            <span class="add-on">legend: <input type="checkbox" id="showlegend" style="margin-top:1px" /></span>
-            <span class="add-on">feed tag: <input type="checkbox" id="showtag" style="margin-top:1px" /></span>
+            <span class="add-on"><?php echo _("Show"); ?></span>
+            <span class="add-on"><?php echo _("missing data"); ?>: <input type="checkbox" id="showmissing" style="margin-top:1px" /></span>
+            <span class="add-on"><?php echo _("legend"); ?>: <input type="checkbox" id="showlegend" style="margin-top:1px" /></span>
+            <span class="add-on"><?php echo _("feed tag"); ?>: <input type="checkbox" id="showtag" style="margin-top:1px" /></span>
             </div>
             
             <div style="clear:both"></div>
@@ -108,17 +110,17 @@
 
         <div id="histogram-controls" style="padding-bottom:5px; display:none;">
             <div class="input-prepend input-append">
-                <span class="add-on" style="width:75px"><b>Histogram</b></span>
-                <span class="add-on" style="width:75px">Type</span>
+                <span class="add-on" style="width:85px"><b><?php echo _("Histogram"); ?></b></span>
+                <span class="add-on" style="width:75px"><?php echo _("Type"); ?></span>
                 <select id="histogram-type" style="width:150px">
-                    <option value="timeatvalue" >Time at value</option>
-                    <option value="kwhatpower" >kWh at Power</option>
+                    <option value="timeatvalue" ><?php echo _("Time at value"); ?></option>
+                    <option value="kwhatpower" ><?php echo _("kWh at Power"); ?></option>
                 </select>
-                <span class="add-on" style="width:75px">Resolution</span>
+                <span class="add-on" style="width:75px"><?php echo _("Resolution"); ?></span>
                 <input id="histogram-resolution" type="text" style="width:60px"/>
             </div>
             
-            <button id="histogram-back" class="btn" style="float:right">Back to main view</button>
+            <button id="histogram-back" class="btn" style="float:right"><?php echo _("Back to main view"); ?></button>
         </div>
 
         <div id="placeholder_bound" style="width:100%; height:400px;">
@@ -128,60 +130,60 @@
         <div id="info" style="padding:20px; display:none">
             
             <div class="input-prepend input-append" style="padding-right:5px">
-                <span class="add-on" style="width:50px">Start</span>
+                <span class="add-on" style="width:50px"><?php echo _("Start"); ?></span>
                 <input id="request-start" type="text" style="width:80px" />
 
-                <span class="add-on" style="width:50px">End</span>
+                <span class="add-on" style="width:50px"><?php echo _("End"); ?></span>
                 <input id="request-end" type="text" style="width:80px" />
 
-                <span class="add-on" style="width:50px">Type</span>
+                <span class="add-on" style="width:50px"><?php echo _("Type"); ?></span>
                 <select id="request-type" style="width:120px">
-                    <option value="interval">Fixed Interval</option>
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                    <option>Annual</option>
+                    <option value="interval"><?php echo _("Fixed Interval"); ?></option>
+                    <option><?php echo _("Daily"); ?></option>
+                    <option><?php echo _("Weekly"); ?></option>
+                    <option><?php echo _("Monthly"); ?></option>
+                    <option><?php echo _("Annual"); ?></option>
                 </select>
                 
                 <span class="fixed-interval-options">
                     <input id="request-interval" type="text" style="width:60px" />
-                    <span class="add-on">Fix <input id="request-fixinterval" type="checkbox" style="margin-top:1px" /></span>
-                    <span class="add-on">Limit to data interval <input id="request-limitinterval" type="checkbox" style="margin-top:1px" /></span>
+                    <span class="add-on"><?php echo _("Fix"); ?> <input id="request-fixinterval" type="checkbox" style="margin-top:1px" /></span>
+                    <span class="add-on"><?php echo _("Limit to data interval"); ?> <input id="request-limitinterval" type="checkbox" style="margin-top:1px" /></span>
                 </span>
             </div>
             
             <div class="input-prepend input-append">
-                <span class="add-on" style="width:50px">Y-axis:</span>
-                <span class="add-on" style="width:30px">min</span>
+                <span class="add-on" style="width:50px"><?php echo _("Y-axis"); ?></span>
+                <span class="add-on" style="width:30px"><?php echo _("min"); ?></span>
                 <input id="yaxis-min" type="text" style="width:50px" value="auto"/>
 
-                <span class="add-on" style="width:30px">max</span>
+                <span class="add-on" style="width:30px"><?php echo _("max"); ?></span>
                 <input id="yaxis-max" type="text" style="width:50px" value="auto"/>
                 
-                <button id="reload" class="btn">Reload</button>
+                <button id="reload" class="btn"><?php echo _("Reload"); ?></button>
             </div>
             
             <div id="window-info" style=""></div><br>
                 
             <table class="table">
-                <tr><th>Feed</th><th>Type</th><th>Color</th><th>Fill</th><th>Quality</th><th>Min</th><th>Max</th><th>Diff</th><th>Mean</th><th>Stdev</th><th>Wh</th><th style='text-align:center'>Scale</th><th style='text-align:center'>Delta</th><th style='text-align:center'>Average</th><th>DP</th><th style="width:120px"></th></tr>
+                <tr><th><?php echo _("Feed"); ?></th><th><?php echo _("Type"); ?></th><th><?php echo _("Color"); ?></th><th><?php echo _("Fill"); ?></th><th><?php echo _("Quality"); ?></th><th><?php echo _("Min"); ?></th><th><?php echo _("Max"); ?></th><th><?php echo _("Diff"); ?></th><th><?php echo _("Mean"); ?></th><th><?php echo _("Stdev"); ?></th><th><?php echo _("&Sigma;h"); ?></th><th style='text-align:center'><?php echo _("Scale"); ?></th><th style='text-align:center'><?php echo _("Delta"); ?></th><th style='text-align:center'><?php echo _("Average"); ?></th><th><?php echo _("DP"); ?></th><th style="width:120px"></th></tr>
                 <tbody id="stats"></tbody>
             </table>
             
             
             <div class="input-prepend input-append">
-                <button class="btn" id="showcsv" >Show CSV Output</button>
-                <span class="add-on csvoptions">Time format:</span>
+                <button class="btn" id="showcsv" >CSV Output +</button>
+                <span class="add-on csvoptions"><?php echo _("Time format"); ?>:</span>
                 <select id="csvtimeformat" class="csvoptions">
-                    <option value="unix">Unix timestamp</option>
-                    <option value="seconds">Seconds since start</option>
-                    <option value="datestr">Date-time string</option>
+                    <option value="unix"><?php echo _("Unix timestamp"); ?></option>
+                    <option value="seconds"><?php echo _("Seconds since start"); ?></option>
+                    <option value="datestr"><?php echo _("Date-time string"); ?></option>
                 </select>
-                <span class="add-on csvoptions">Null values:</span>
+                <span class="add-on csvoptions"><?php echo _("Null values"); ?>:</span>
                 <select id="csvnullvalues" class="csvoptions">
-                    <option value="show">Show</option>
-                    <option value="lastvalue">Replace with last value</option>
-                    <option value="remove">Remove whole line</option>
+                    <option value="show"><?php echo _("Show"); ?></option>
+                    <option value="lastvalue"><?php echo _("Replace with last value"); ?></option>
+                    <option value="remove"><?php echo _("Remove whole line"); ?></option>
                 </select>
             </div> 
             

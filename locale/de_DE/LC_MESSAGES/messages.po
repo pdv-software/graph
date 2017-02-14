@@ -1,0 +1,693 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: emoncms3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-14 08:47+0100\n"
+"PO-Revision-Date: 2017-02-14 08:48+0100\n"
+"Last-Translator: Frank Dille\n"
+"Language-Team: @sumpfing <anne@sumpfing.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: ../../../graph_langjs.php:30
+msgid "Apr"
+msgstr "Apr"
+
+#: ../../../graph_langjs.php:31
+msgid "Aug"
+msgstr "Aug"
+
+#: ../../../graph_langjs.php:32
+msgid "Bars"
+msgstr "Balken"
+
+#: ../../../graph_langjs.php:33
+msgid "Dec"
+msgstr "Dez"
+
+#: ../../../graph_langjs.php:34
+msgid "Feb"
+msgstr "Feb"
+
+#: ../../../graph_langjs.php:35
+msgid "Fri"
+msgstr "Fr"
+
+#: ../../../graph_langjs.php:36
+msgid "g"
+msgstr "G"
+
+#: ../../../graph_langjs.php:37
+msgid "Jan"
+msgstr "Jan"
+
+#: ../../../graph_langjs.php:38
+msgid "Jul"
+msgstr "Jul"
+
+#: ../../../graph_langjs.php:39
+msgid "Jun"
+msgstr "Jun"
+
+#: ../../../graph_langjs.php:40
+msgid "k"
+msgstr "K"
+
+#: ../../../graph_langjs.php:41
+msgid "Length"
+msgstr "Länge"
+
+#: ../../../graph_langjs.php:42
+msgid "Lines"
+msgstr "Zeilen"
+
+#: ../../../graph_langjs.php:43
+msgid "m"
+msgstr "M"
+
+#: ../../../graph_langjs.php:44
+msgid "Mar"
+msgstr "Mär"
+
+#: ../../../graph_langjs.php:45
+msgid "May"
+msgstr "Mai"
+
+#: ../../../graph_langjs.php:46
+msgid "Mon"
+msgstr "Mo"
+
+#: ../../../graph_langjs.php:47
+msgid "Nov"
+msgstr "Nov"
+
+#: ../../../graph_langjs.php:48
+msgid "Oct"
+msgstr "Okt"
+
+#: ../../../graph_langjs.php:49
+msgid "Please enter a name for the graph you wish to save"
+msgstr "Bitte einen Namen für die Grafik eingeben."
+
+#: ../../../graph_langjs.php:50
+msgid "Request error"
+msgstr "Request Fehler"
+
+#: ../../../graph_langjs.php:51
+msgid "Sat"
+msgstr "Sa"
+
+#: ../../../graph_langjs.php:52
+msgid "Select graph"
+msgstr "Grafik wählen"
+
+#: ../../../graph_langjs.php:53
+msgid "Sep"
+msgstr "Sep"
+
+#: ../../../graph_langjs.php:54
+msgid "Sun"
+msgstr "So"
+
+#: ../../../graph_langjs.php:55
+msgid "Thu"
+msgstr "Do"
+
+#: ../../../graph_langjs.php:56
+msgid "Tue"
+msgstr "Di"
+
+#: ../../../graph_langjs.php:57
+msgid "Wed"
+msgstr "Mi"
+
+#: ../../../graph_langjs.php:58
+msgid "Window"
+msgstr "Bereich"
+
+#: ../../../graph_langjs.php:61
+msgid "Graph"
+msgstr "Grafik"
+
+#: ../../../graph_langjs.php:62
+msgid "Saved graphs from graph module"
+msgstr "Gespeicherte Grafiken im Modul"
+
+#: ../../../graph_menu.php:5
+msgid "Graphs"
+msgstr "Grafiken"
+
+#: ../../../view.php:70
+msgid "My Graphs"
+msgstr "Grafiken"
+
+#: ../../../view.php:76
+msgid "Graph Name"
+msgstr "Name"
+
+#: ../../../view.php:78
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../../../view.php:79
+msgid "Save"
+msgstr "Speichern"
+
+#: ../../../view.php:85
+msgid "Data viewer"
+msgstr "Datenansicht"
+
+#: ../../../view.php:91
+msgid "D"
+msgstr "T"
+
+#: ../../../view.php:92
+msgid "W"
+msgstr "W"
+
+#: ../../../view.php:93
+msgid "M"
+msgstr "M"
+
+#: ../../../view.php:94
+msgid "Y"
+msgstr "J"
+
+#: ../../../view.php:101 ../../../view.php:183
+msgid "Show"
+msgstr "Anzeige"
+
+#: ../../../view.php:102
+msgid "missing data"
+msgstr "<abbr title=\"Skip\">fehlende Überspringen</abbr>"
+
+#: ../../../view.php:103
+msgid "legend"
+msgstr "Legende"
+
+#: ../../../view.php:104
+msgid "feed tag"
+msgstr "Feed-Tag"
+
+#: ../../../view.php:112
+msgid "Histogram"
+msgstr "Histogramm"
+
+#: ../../../view.php:113 ../../../view.php:138 ../../../view.php:168
+msgid "Type"
+msgstr "Typ"
+
+#: ../../../view.php:115
+msgid "Time at value"
+msgstr "Zeit bei Wert"
+
+#: ../../../view.php:116
+msgid "kWh at Power"
+msgstr "kWh bei Leistung"
+
+#: ../../../view.php:118
+msgid "Resolution"
+msgstr "Auflösung"
+
+#: ../../../view.php:122
+msgid "Back to main view"
+msgstr "Zurück zur Hauptansicht"
+
+#: ../../../view.php:132
+msgid "Start"
+msgstr "Von"
+
+#: ../../../view.php:135
+msgid "End"
+msgstr "Bis"
+
+#: ../../../view.php:140
+msgid "Fixed Interval"
+msgstr "Intervall"
+
+#: ../../../view.php:141
+msgid "Daily"
+msgstr "Täglich"
+
+#: ../../../view.php:142
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+#: ../../../view.php:143
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: ../../../view.php:144
+msgid "Annual"
+msgstr "Jährlich"
+
+#: ../../../view.php:149
+msgid "Fix"
+msgstr "Fix."
+
+#: ../../../view.php:150
+msgid "Limit to data interval"
+msgstr "Beschränken auf Datenintervall"
+
+#: ../../../view.php:155
+msgid "Y-axis"
+msgstr "Y-Achse"
+
+#: ../../../view.php:156
+msgid "min"
+msgstr "Min"
+
+#: ../../../view.php:159
+msgid "max"
+msgstr "Max"
+
+#: ../../../view.php:162
+msgid "Reload"
+msgstr "Neu Laden"
+
+#: ../../../view.php:168
+msgid "Feed"
+msgstr "Feed"
+
+#: ../../../view.php:168
+msgid "Color"
+msgstr "Farbe"
+
+#: ../../../view.php:168
+msgid "Fill"
+msgstr "Füllen"
+
+#: ../../../view.php:168
+msgid "Quality"
+msgstr "<abbr title=\"Qualität\">Qt.</abbr>"
+
+#: ../../../view.php:168
+msgid "Min"
+msgstr "Min"
+
+#: ../../../view.php:168
+msgid "Max"
+msgstr "Max"
+
+#: ../../../view.php:168
+msgid "Diff"
+msgstr "Diff"
+
+#: ../../../view.php:168
+msgid "Mean"
+msgstr "<abbr title=\"Mittelwert\">Mw.</abbr>"
+
+#: ../../../view.php:168
+msgid "Stdev"
+msgstr "<abbr title=\"Standard Abweichung\">SD</abbr>"
+
+#: ../../../view.php:168
+msgid "&Sigma;h"
+msgstr "<abbr title=\"Mittelwert*Zeit (h)\">&Sigma;h</abbr>"
+
+#: ../../../view.php:168
+msgid "Scale"
+msgstr "<abbr title=\"Skalieren\">*</abbr>"
+
+#: ../../../view.php:168
+msgid "Delta"
+msgstr "<abbr title=\"Delta\">&Delta;</abbr>"
+
+#: ../../../view.php:168
+msgid "Average"
+msgstr "<abbr title=\"Durchschnitt\">&empty;</abbr>"
+
+#: ../../../view.php:168
+msgid "DP"
+msgstr "DP"
+
+#: ../../../view.php:175
+msgid "Time format"
+msgstr "Zeitformat"
+
+#: ../../../view.php:177
+msgid "Unix timestamp"
+msgstr "Unix Zeitstempel"
+
+#: ../../../view.php:178
+msgid "Seconds since start"
+msgstr "Sekunden seit Start"
+
+#: ../../../view.php:179
+msgid "Date-time string"
+msgstr "Datum/Zeit"
+
+#: ../../../view.php:181
+msgid "Null values"
+msgstr "NULL Werte"
+
+#: ../../../view.php:184
+msgid "Replace with last value"
+msgstr "Ersetzen mit letztem Wert"
+
+#: ../../../view.php:185
+msgid "Remove whole line"
+msgstr "Zeile entfernen"
+
+#~ msgid "Input API"
+#~ msgstr "Input API"
+
+#~ msgid "Apikey authentication"
+#~ msgstr "Apikey Authentifikation"
+
+#~ msgid "If you want to call any of the following actions when your not logged in you have this options to authenticate with the API key:"
+#~ msgstr "Wenn man nachfolgende Aktionen ohne Anmeldung aufrufen will, muss der Apikey zur URL hinzugefügt werden:"
+
+#~ msgid "Append on the URL of your request: &apikey=APIKEY"
+#~ msgstr "beim Request der URL hinzufügen: &apjkey=APIKEY"
+
+#~ msgid "Use POST parameter: \"apikey=APIKEY\""
+#~ msgstr "POST Parameter benutzen: \"apikey=APIKEY\""
+
+#~ msgid "Add the HTTP header: \"Authorization: Bearer APIKEY\""
+#~ msgstr "Hinzufügen zum HTTP Header: \"Authorization: Bearer APIKEY\""
+
+#~ msgid "Read only:"
+#~ msgstr "Nur Lesen:"
+
+#~ msgid "Read & Write:"
+#~ msgstr "Lesen & Schreiben:"
+
+#~ msgid "Available HTML URLs"
+#~ msgstr "Verfügbare HTML URLs"
+
+#~ msgid "The input list view"
+#~ msgstr "Input Ansicht"
+
+#~ msgid "This page"
+#~ msgstr "Diese Seite"
+
+#~ msgid "Input processing configuration page"
+#~ msgstr "Konfiguration Inputverarbeitung "
+
+#~ msgid "Available JSON commands"
+#~ msgstr "Verfügbare JSON Befehle"
+
+#~ msgid "To use the json api the request url needs to include <b>.json</b>"
+#~ msgstr "Um die json api zu nutzen benötigt die Request-URL den Inhalt <b>.json</b>"
+
+#~ msgid "Post data (using http get)"
+#~ msgstr "Daten per HTTP Post senden"
+
+#~ msgid "JSON format:"
+#~ msgstr "JSON Format:"
+
+#~ msgid "Assign inputs to a node group"
+#~ msgstr "Inputs einer Nodegruppe zuweisen"
+
+#~ msgid "Set the input entry time manually"
+#~ msgstr "Inputzeit manuell setzen"
+
+#~ msgid "APIKEY"
+#~ msgstr "APIKEY"
+
+#~ msgid "To post data from a remote device you will need to include in the request url your write apikey. This give your device write access to your emoncms account, allowing it to post data."
+#~ msgstr "Um Daten von einem Remotegerät zu posten muss der Write Apikey in die Request-URL eingefügt. Dies gibt dem Gerät Schreibzugriff auf das emoncms Konto."
+
+#~ msgid "For example using the first json type request above just add the apikey to the end like this:"
+#~ msgstr "Um beispielsweise den ersten JSON Request zu benutzen füge einfach den Apikey am Ende ein:"
+
+#~ msgid "Bulk data"
+#~ msgstr "Massendaten"
+
+#~ msgid "You can provide data using bulk mode"
+#~ msgstr "Du kannst Daten bereitstellen wenn du den Bulk Modus benutzt"
+
+#~ msgid "The first number of each node is the time offset (see below)."
+#~ msgstr "Die erste Zahl jedes Nodes ist der Zeitunterschied (siehe unten)."
+
+#~ msgid "The second number is the node id, this is the unique identifer for the wireless node."
+#~ msgstr "Die zweite Nummer ist die Node ID, dies ist die einmalige Kennzeichnung für einen Funknode."
+
+#~ msgid "All the numbers after the first two are data values. The second node here (node 17) has two data values: 1437 and 3164."
+#~ msgstr "Alle Zahlen nach den ersten beiden sind Datenwerte. Der zweite Node (Node 17) hat zwei Datenwerte: 1437 und 3164."
+
+#~ msgid "Optional offset and time parameters allow the sender to set the time reference for the packets. If none is specified, it is assumed that the last packet just arrived. The time for the other packets is then calculated accordingly."
+#~ msgstr "Optionale Abstand- und Zeitparameter erlauben dem Sender die Referenzzeit für die Pakete zu setzen. Wenn nichts angegeben ist wird angenommen, dass es das letzte eingegangene Paket ist. Die Zeit für die anderenPakete wird dann errechnet."
+
+#~ msgid "Legacy default format (4 is now, 2 is -2 seconds and 0 is -4 seconds to now):"
+#~ msgstr "Vererbtes Standardformat (4 ist aktuell, 2 ist -2 Sekunden und 0 ist -4 Sekunden zu jetzt:"
+
+#~ msgid "Time offset format (-6 is -16 seconds to now):"
+#~ msgstr "Zeitunterschied Format (-6 ist -16 Sekunden zu jetzt):"
+
+#~ msgid "Sentat format: (useful for sending as positive increasing time index)"
+#~ msgstr "Sentat Format: (hilfreich um positiv ansteigende Zeitindizes zu senden)"
+
+#~ msgid "Absolute time format (-6 is 1387730121 seconds since 1970-01-01 00:00:00 UTC))"
+#~ msgstr "Absolutes Zeitformat (-6 ist 1387730121 Sekunden seit 1970-01-01 00:00:00 UTC))"
+
+#~ msgid "Post data (using http post)"
+#~ msgstr "Daten per HTTP Post senden"
+
+#~ msgid "To post data using http post you can use the \"data\" post parameter, it will accept csv and json formatting. Other parameters need to be provided as a parameter in the url, the only exception is the apikey which can be a post parameter as well."
+#~ msgstr "Zum Senden von Daten per HTTP wird der \"data\" Parameter verwendet. Dieser akzeptiert das CSV und JSON Format. Weitere Parameter werden in der URL angegeben. Einzige Ausnahme ist der API-Key der auch als POST Parameter gesendet werden kann."
+
+#~ msgid "The examples below use curl to post the data to the input api. It is availible "
+#~ msgstr "Die Beispiele benutzen curl zum Senden von Daten per Input Api."
+
+#~ msgid "Bulk mode legacy format:"
+#~ msgstr "Blockmodus Legacy Format:"
+
+#~ msgid "Bulk mode time offset format:"
+#~ msgstr "Blockmodus Zeitoffset Format"
+
+#~ msgid "Bulk mode sentat format:"
+#~ msgstr "Blockmodus GesendetAm Format"
+
+#~ msgid "Bulk mode absolute time format:"
+#~ msgstr "Blockmodus absolutes Zeitformat"
+
+#~ msgid "Input actions"
+#~ msgstr "Input Aktionen"
+
+#~ msgid "List of inputs with latest data"
+#~ msgstr "Liste der Inputs mit aktuellen Daten"
+
+#~ msgid "Get inputs configuration"
+#~ msgstr "Input Konfiguration abrufen"
+
+#~ msgid "Set input fields"
+#~ msgstr "Input setzen"
+
+#~ msgid "Delete an input"
+#~ msgstr "Einen Input löschen"
+
+#~ msgid "Clean inputs without a process list"
+#~ msgstr "Input ohne Verarbeitung löschen"
+
+#~ msgid "Input process actions"
+#~ msgstr "Input Verarbeitungsaktionen"
+
+#~ msgid "Get input process list"
+#~ msgstr "Input Verarbeitungsliste abrufen"
+
+#~ msgid "Set input process list"
+#~ msgstr "Input Verarbeitungsliste setzen"
+
+#~ msgid "Reset input process list"
+#~ msgstr "Input Verarbeitungsliste löschen"
+
+#~ msgid "Input API Help"
+#~ msgstr "Input API Hilfe"
+
+#~ msgid "Inputs"
+#~ msgstr "Inputs"
+
+#~ msgid "loading..."
+#~ msgstr "wird geladen ..."
+
+#~ msgid "No inputs created"
+#~ msgstr "Keine Inputs angelegt"
+
+#~ msgid "Inputs are the main entry point for your monitoring device. Configure your device to post values here, you may want to follow the <a href=\"api\">Input API helper</a> as a guide for generating your request."
+#~ msgstr "Inputs sind der Standardeinstiegspunkt für ein Gerätdaten. Konfigurieren Sie Geräte um hier Werte zu posten, folgen Sie der <a href=\"api\">Input API Hilfe</a> als Anleitung zum Erzeugen von Requests."
+
+#~ msgid "Delete Input"
+#~ msgstr "Input löschen"
+
+#~ msgid "Deleting an Input will lose it name and configured Processlist.<br>A new blank input is automatic created by API data post if it does not already exists."
+#~ msgstr "Beim Löschen eines Inputs gehen der Name und die eingestellte Prozessliste verloren.<br>Ein neuer leerer Input wird automatisch von der API erstellt."
+
+#~ msgid "Are you sure you want to delete?"
+#~ msgstr "Wollen Sie wirklich löschen?"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Process list"
+#~ msgstr "Prozessliste"
+
+#~ msgid "Updated"
+#~ msgstr "Geändert"
+
+#~ msgid "Node"
+#~ msgstr "Node"
+
+#~ msgid "Key"
+#~ msgstr "Key"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Unit"
+#~ msgstr "Einheit"
+
+#~ msgid "Value"
+#~ msgstr "Wert"
+
+#~ msgid "Error setting processlist"
+#~ msgstr "Fehler beim Ändern der Prozessliste"
+
+#~ msgid "Post data"
+#~ msgstr "Daten senden"
+
+#~ msgid "Input"
+#~ msgstr "Input"
+
+#~ msgid "Log to feed"
+#~ msgstr "In Feed loggen"
+
+#~ msgid "x"
+#~ msgstr "x"
+
+#~ msgid "+"
+#~ msgstr "+"
+
+#~ msgid "Power to kWh"
+#~ msgstr "Leistung zu kW/h"
+
+#~ msgid "Power to kWh/d"
+#~ msgstr "Leistung zu kW/h Tag"
+
+#~ msgid "x input"
+#~ msgstr "x input"
+
+#~ msgid "Input on-time"
+#~ msgstr "Zeitige Eingabe"
+
+#~ msgid "Wh increments to kWh/d"
+#~ msgstr "Watt Schritte zu kW/h pro Tag"
+
+#~ msgid "kWh to kWh/d (OLD)"
+#~ msgstr "kW/h zu kW/h pro Tag (ALT)"
+
+#~ msgid "update feed @time"
+#~ msgstr "Feed updaten um @time"
+
+#~ msgid "+ input"
+#~ msgstr "+ input"
+
+#~ msgid "/ input"
+#~ msgstr "/ input"
+
+#~ msgid "Phaseshift"
+#~ msgstr "Phasenverschiebung"
+
+#~ msgid "Accumulator"
+#~ msgstr "Akkumulator"
+
+#~ msgid "Rate of change"
+#~ msgstr "Änderungsrate"
+
+#~ msgid "Heat flux"
+#~ msgstr "Wärmefluss"
+
+#~ msgid "Power gained to kWh/d"
+#~ msgstr "Leistung gewonnen zu kW/h pro Tag"
+
+#~ msgid "Total pulse count to pulse increment"
+#~ msgstr "Gesamtimpulse zu Impulszuwachs"
+
+#~ msgid "- input"
+#~ msgstr "- input"
+
+#~ msgid "kWh to kWh/d"
+#~ msgstr "kW/h zu kW/h pro Tag"
+
+#~ msgid "Allow positive"
+#~ msgstr "Erlaube positive"
+
+#~ msgid "Allow negative"
+#~ msgstr "Erlaube negative"
+
+#~ msgid "Signed to unsigned"
+#~ msgstr "Signiert zu unsigniert"
+
+#~ msgid "Min value"
+#~ msgstr "Minimalwert"
+
+#~ msgid " + feed"
+#~ msgstr " + feed"
+
+#~ msgid " - feed"
+#~ msgstr " - feed"
+
+#~ msgid " * feed"
+#~ msgstr " * feed"
+
+#~ msgid " / feed"
+#~ msgstr " / feed"
+
+#~ msgid "Reset to ZERO"
+#~ msgstr "Zurücksetzen auf Null"
+
+#~ msgid "Wh Accumulator"
+#~ msgstr "Wattstunden Akkumulator"
+
+#~ msgid "Publish to MQTT"
+#~ msgstr "Veröffentlichen an MQTT"
+
+#~ msgid "Add an input process"
+#~ msgstr "Input Verarbeitungsaktion hinzufügen"
+
+#~ msgid "List input process list"
+#~ msgstr "Input Verabeitungsaktionen auflisten"
+
+#~ msgid "Move input process"
+#~ msgstr "Input Verarbeitung verschieben"
+
+#~ msgid "Input processes are executed sequentially with the result being passed back for further processing by the next processor in the input processing list."
+#~ msgstr "Input Prozesse werden regelmässig ausgeführt und das Resultat wird zur weiteren Verarbeitung zurückgeliefert zum nächsten Prozess in der Verarbeitungsliste."
+
+#~ msgid "Order"
+#~ msgstr "Reihenfolge"
+
+#~ msgid "Process"
+#~ msgstr "Verarbeitung"
+
+#~ msgid "Actions"
+#~ msgstr "Aktionen"
+
+#~ msgid "Add"
+#~ msgstr "Hinzufügen"
+
+#~ msgid "en_EN"
+#~ msgstr "English"
+
+#~ msgid "es_ES"
+#~ msgstr "Spanish"
+
+#~ msgid "nl_BE"
+#~ msgstr "Dutch (Belgium)"
+
+#~ msgid "nl_NL"
+#~ msgstr "Dutch (Netherlands)"
+
+#~ msgid "fr_FR"
+#~ msgstr "French"
+
+#~ msgid "AUTODETECTLANGUAGE"
+#~ msgstr "Use language browser"
