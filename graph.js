@@ -60,7 +60,7 @@ $('#placeholder').bind("plothover", function (event, pos, item) {
             $("#tooltip").remove();
             var item_time = item.datapoint[0];
             var item_value = item.datapoint[1];
-
+            if ($.isNumeric(item_value)) item_value = item_value.toFixed(2);
             var d = new Date(item_time);
             var days = [_Tr("Sun"),_Tr("Mon"),_Tr("Tue"),_Tr("Wed"),_Tr("Thu"),_Tr("Fri"),_Tr("Sat")];
             var months = [_Tr("Jan"),_Tr("Feb"),_Tr("Mar"),_Tr("Apr"),_Tr("May"),_Tr("Jun"),_Tr("Jul"),_Tr("Aug"),_Tr("Sep"),_Tr("Oct"),_Tr("Nov"),_Tr("Dec")];
@@ -175,7 +175,7 @@ function graph_init_editor()
         
         graph_reloaddraw();
     });
-
+    
     $("#showcsv").click(function(){
         if ($("#showcsv").html()=="CSV Output +") {
             printcsv()
@@ -514,7 +514,7 @@ function graph_draw()
         mins = "";
     }
     
-    if (!embed) $("#window-info").html("<b>"+_Tr("Window")+":</b> "+printdate(view.start)+" > "+printdate(view.end)+", <b>"+_Tr("Length")+":</b> "+hours+"h"+mins+" ("+time_in_window+" seconds)");
+    if (!embed) $("#window-info").html("<b>"+_Tr("Window")+":</b> "+printdate(view.start)+" > "+printdate(view.end)+", <b>"+_Tr("Length")+":</b> "+hours+"h"+mins+" ");
     
     plotdata = [];
     for (var z in feedlist) {
@@ -786,13 +786,17 @@ function histogram(feedid,type,resolution)
 //----------------------------------------------------------------------------------------
 $("#graph-select").change(function() {
     var name = $(this).val();
-    $("#graph-name").val(name);
-    $("#graph-delete").show();
     var index = graph_index_from_name(name);
 
     if (index==-1) {
       return false;
     }
+    // Show name as title
+    $("#graph-title").text(name);
+    $("#graph-name").val(name);
+
+    $("#graph-delete").show();
+
     // view settings
     view.start = savedgraphs[index].start;
     view.end = savedgraphs[index].end;

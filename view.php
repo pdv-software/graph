@@ -52,14 +52,56 @@
   padding-left:0px;
 }
 
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
 
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+#    overflow: auto;
+    overflow-x: auto;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;  
+}
 </style>
 
 <div id="wrapper">
     <div id="sidebar-wrapper">
             <div style="padding:10px;">
+                <div id="sidebar-close" style="float:right; cursor:pointer; padding:10px;"><i class="icon-remove"></i></div>
                 <h4><?php echo _("My Graphs"); ?></h4>
-                
                 <select id="graph-select" style="width:215px">
                 </select>
                 
@@ -70,7 +112,6 @@
                 <button id="graph-save" class="btn"><?php echo _("Save"); ?></button>
             </div>
             <div style="padding-left:10px;">
-                <div id="sidebar-close" style="float:right; cursor:pointer; padding:10px;"><i class="icon-remove"></i></div>
                 <h4><?php echo _("Feeds"); ?></h4>
                 
             </div>
@@ -82,31 +123,9 @@
     </div>
 
     <div id="page-content-wrapper" style="max-width:1280px">
-        
-        <h3><?php echo _("Data viewer"); ?></h3> 
+        <h3><?php echo _("Data viewer"); ?><div style="float:right;" id="graph-title"></div></h3> 
 
         <div id="error" style="display:none"></div>
-
-        <div id="navigation" style="padding-bottom:5px;">
-            <button class="btn" id="sidebar-open"><i class="icon-list"></i></button>
-            <button class='btn graph_time' type='button' time='1'><?php echo _("D"); ?></button>
-            <button class='btn graph_time' type='button' time='7'><?php echo _("W"); ?></button>
-            <button class='btn graph_time' type='button' time='30'><?php echo _("M"); ?></button>
-            <button class='btn graph_time' type='button' time='365'><?php echo _("Y"); ?></button>
-            <button id='graph_zoomin' class='btn'>+</button>
-            <button id='graph_zoomout' class='btn'>-</button>
-            <button id='graph_left' class='btn'><</button>
-            <button id='graph_right' class='btn'>></button>
-            
-            <div class="input-prepend input-append" style="float:right; margin-right:22px">
-            <span class="add-on"><?php echo _("Show"); ?></span>
-            <span class="add-on"><?php echo _("missing data"); ?>: <input type="checkbox" id="showmissing" style="margin-top:1px" /></span>
-            <span class="add-on"><?php echo _("legend"); ?>: <input type="checkbox" id="showlegend" style="margin-top:1px" /></span>
-            <span class="add-on"><?php echo _("feed tag"); ?>: <input type="checkbox" id="showtag" style="margin-top:1px" /></span>
-            </div>
-            
-            <div style="clear:both"></div>
-        </div>
 
         <div id="histogram-controls" style="padding-bottom:5px; display:none;">
             <div class="input-prepend input-append">
@@ -124,19 +143,44 @@
         </div>
 
         <div id="placeholder_bound" style="width:100%; height:400px;">
-            <div id="placeholder"></div>
+<div id="graph_bound" style="height:400px; width:100%; position:relative; ">
+           <div id="placeholder"></div>
+    <div id="graph-buttons" style="position:absolute; top:18px; right:32px; opacity:0.5;">
+        <div class='btn-group'>
+            <button class="btn" id="sidebar-open"><i class="icon-list"></i></button>
+            <button class='btn graph_time' type='button' time='1'><?php echo _("D"); ?></button>
+            <button class='btn graph_time' type='button' time='7'><?php echo _("W"); ?></button>
+            <button class='btn graph_time' type='button' time='30'><?php echo _("M"); ?></button>
+            <button class='btn graph_time' type='button' time='365'><?php echo _("Y"); ?></button>
+            <button class='btn graph-nav' id='graph_zoomin'>+</button>
+            <button class='btn graph-nav' id='graph_zoomout'>-</button>
+            <button class='btn graph-nav' id='graph_left'><</button>
+            <button class='btn graph-nav' id='graph_right'>></button>
+        </div>
+    </div>
+</div>
         </div>
 
         <div id="info" style="padding:20px; display:none">
+
+            <button class="accordion" id="accFeeds"><b><?php echo _("Feeds"); ?></b></button>
+            <div class="panel" >
+              <table class="table">
+                <tr><th><?php echo _("Feed"); ?></th><th><?php echo _("Type"); ?></th><th><?php echo _("Color"); ?></th><th><?php echo _("Fill"); ?></th><th><?php echo _("Quality"); ?></th><th><?php echo _("Min"); ?></th><th><?php echo _("Max"); ?></th><th><?php echo _("Diff"); ?></th><th><?php echo _("Mean"); ?></th><th><?php echo _("Stdev"); ?></th><th><?php echo _("&Sigma;h"); ?></th><th style='text-align:center'><?php echo _("Scale"); ?></th><th style='text-align:center'><?php echo _("Delta"); ?></th><th style='text-align:center'><?php echo _("Average"); ?></th><th><?php echo _("DP"); ?></th><th style="width:120px"></th></tr>
+                <tbody id="stats"></tbody>
+              </table>
+            </div>
             
+            <button class="accordion"><b><?php echo _("Details"); ?></b></button>
+            <div class="panel">
             <div class="input-prepend input-append" style="padding-right:5px">
-                <span class="add-on" style="width:50px"><?php echo _("Start"); ?></span>
+                <span class="add-on" style="width:60px"><?php echo _("Start"); ?></span>
                 <input id="request-start" type="text" style="width:80px" />
-
-                <span class="add-on" style="width:50px"><?php echo _("End"); ?></span>
+                <span class="add-on" style="width:60px"><?php echo _("End"); ?></span>
                 <input id="request-end" type="text" style="width:80px" />
-
-                <span class="add-on" style="width:50px"><?php echo _("Type"); ?></span>
+            </div>
+            <div class="input-prepend input-append">
+                <span class="add-on" style="width:60px"><?php echo _("Type"); ?></span>
                 <select id="request-type" style="width:120px">
                     <option value="interval"><?php echo _("Fixed Interval"); ?></option>
                     <option><?php echo _("Daily"); ?></option>
@@ -148,30 +192,31 @@
                 <span class="fixed-interval-options">
                     <input id="request-interval" type="text" style="width:60px" />
                     <span class="add-on"><?php echo _("Fix"); ?> <input id="request-fixinterval" type="checkbox" style="margin-top:1px" /></span>
-                    <span class="add-on"><?php echo _("Limit to data interval"); ?> <input id="request-limitinterval" type="checkbox" style="margin-top:1px" /></span>
+                    <span class="add-on"><?php echo _("<abbr title='Limit to data interval'>Limit</abbr>"); ?> <input id="request-limitinterval" type="checkbox" style="margin-top:1px" /></span>
                 </span>
             </div>
-            
             <div class="input-prepend input-append">
-                <span class="add-on" style="width:50px"><?php echo _("Y-axis"); ?></span>
+                <span class="add-on" style="width:60px"><?php echo _("Y-axis"); ?></span>
                 <span class="add-on" style="width:30px"><?php echo _("min"); ?></span>
                 <input id="yaxis-min" type="text" style="width:50px" value="auto"/>
-
                 <span class="add-on" style="width:30px"><?php echo _("max"); ?></span>
                 <input id="yaxis-max" type="text" style="width:50px" value="auto"/>
                 
                 <button id="reload" class="btn"><?php echo _("Reload"); ?></button>
             </div>
-            
-            <div id="window-info" style=""></div><br>
-                
-            <table class="table">
-                <tr><th><?php echo _("Feed"); ?></th><th><?php echo _("Type"); ?></th><th><?php echo _("Color"); ?></th><th><?php echo _("Fill"); ?></th><th><?php echo _("Quality"); ?></th><th><?php echo _("Min"); ?></th><th><?php echo _("Max"); ?></th><th><?php echo _("Diff"); ?></th><th><?php echo _("Mean"); ?></th><th><?php echo _("Stdev"); ?></th><th><?php echo _("&Sigma;h"); ?></th><th style='text-align:center'><?php echo _("Scale"); ?></th><th style='text-align:center'><?php echo _("Delta"); ?></th><th style='text-align:center'><?php echo _("Average"); ?></th><th><?php echo _("DP"); ?></th><th style="width:120px"></th></tr>
-                <tbody id="stats"></tbody>
-            </table>
-            
-            
+
             <div class="input-prepend input-append">
+                <span class="add-on" style="width:60px"><?php echo _("Show"); ?></span>
+                <span class="add-on"><?php echo _("missing data"); ?>: <input type="checkbox" id="showmissing" style="margin-top:1px" /></span>
+                <span class="add-on"><?php echo _("legend"); ?>: <input type="checkbox" id="showlegend" style="margin-top:1px" /></span>
+                <span class="add-on"><?php echo _("feed tag"); ?>: <input type="checkbox" id="showtag" style="margin-top:1px" /></span>
+            </div>
+
+            <div id="window-info" style=""></div><br>
+            </div>
+            
+            <button class="accordion"><b><?php echo _("Export"); ?></b></button>
+              <div class="panel">
                 <button class="btn" id="showcsv" >CSV Output +</button>
                 <span class="add-on csvoptions"><?php echo _("Time format"); ?>:</span>
                 <select id="csvtimeformat" class="csvoptions">
@@ -185,10 +230,8 @@
                     <option value="lastvalue"><?php echo _("Replace with last value"); ?></option>
                     <option value="remove"><?php echo _("Remove whole line"); ?></option>
                 </select>
-            </div> 
-            
-            
-            <textarea id="csv" style="width:98%; height:500px; display:none; margin-top:10px"></textarea>
+              <textarea id="csv" style="width:98%; height:300px; display:none; margin-top:10px"></textarea>
+              </div> 
         </div>
     </div>
 </div>
@@ -198,8 +241,17 @@
 <script>
     var path = "<?php echo $path; ?>";
     
+    // Begin: accordion effect
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        }
+    }
+    // End: accordion effect
 
-    
     sidebar_resize();
     graph_init_editor();
     
@@ -223,5 +275,10 @@
     
     graph_reloaddraw();
     
+
+// Auto expand Feeds accordion element
+//    $(document).ready(function () {
+//        document.getElementById("accFeeds").click();
+//    });
 </script>
 
