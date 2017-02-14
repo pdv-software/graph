@@ -85,15 +85,14 @@ div.panel {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
-#    overflow: auto;
-    overflow-x: auto;
+    overflow: auto;
     transition: 0.6s ease-in-out;
     opacity: 0;
 }
 
 div.panel.show {
     opacity: 1;
-    max-height: 500px;  
+    max-height: 600px;  
 }
 </style>
 
@@ -143,10 +142,10 @@ div.panel.show {
         </div>
 
         <div id="placeholder_bound" style="width:100%; height:400px;">
-<div id="graph_bound" style="height:400px; width:100%; position:relative; ">
-           <div id="placeholder"></div>
-    <div id="graph-buttons" style="position:absolute; top:18px; right:32px; opacity:0.5;">
-        <div class='btn-group'>
+          <div id="graph_bound" style="height:400px; width:100%; position:relative; ">
+          <div id="placeholder"></div>
+          <div id="graph-buttons" style="position:absolute; top:18px; right:32px; opacity:0.5;">
+          <div class='btn-group'>
             <button class="btn" id="sidebar-open"><i class="icon-list"></i></button>
             <button class='btn graph_time' type='button' time='1'><?php echo _("D"); ?></button>
             <button class='btn graph_time' type='button' time='7'><?php echo _("W"); ?></button>
@@ -156,20 +155,12 @@ div.panel.show {
             <button class='btn graph-nav' id='graph_zoomout'>-</button>
             <button class='btn graph-nav' id='graph_left'><</button>
             <button class='btn graph-nav' id='graph_right'>></button>
-        </div>
-    </div>
-</div>
+          </div>
+          </div>
+          </div>
         </div>
 
         <div id="info" style="padding:20px; display:none">
-
-            <button class="accordion" id="accFeeds"><b><?php echo _("Feeds"); ?></b></button>
-            <div class="panel" >
-              <table class="table">
-                <tr><th><?php echo _("Feed"); ?></th><th><?php echo _("Type"); ?></th><th><?php echo _("Color"); ?></th><th><?php echo _("Fill"); ?></th><th><?php echo _("Quality"); ?></th><th><?php echo _("Min"); ?></th><th><?php echo _("Max"); ?></th><th><?php echo _("Diff"); ?></th><th><?php echo _("Mean"); ?></th><th><?php echo _("Stdev"); ?></th><th><?php echo _("&Sigma;h"); ?></th><th style='text-align:center'><?php echo _("Scale"); ?></th><th style='text-align:center'><?php echo _("Delta"); ?></th><th style='text-align:center'><?php echo _("Average"); ?></th><th><?php echo _("DP"); ?></th><th style="width:120px"></th></tr>
-                <tbody id="stats"></tbody>
-              </table>
-            </div>
             
             <button class="accordion"><b><?php echo _("Details"); ?></b></button>
             <div class="panel">
@@ -215,6 +206,14 @@ div.panel.show {
             <div id="window-info" style=""></div><br>
             </div>
             
+            <button class="accordion"><b><?php echo _("Feeds"); ?></b></button>
+            <div class="panel">
+              <table class="table">
+                <tr><th><?php echo _("Feed"); ?></th><th><?php echo _("Type"); ?></th><th><?php echo _("Color"); ?></th><th><?php echo _("Fill"); ?></th><th><?php echo _("Quality"); ?></th><th><?php echo _("Min"); ?></th><th><?php echo _("Max"); ?></th><th><?php echo _("Diff"); ?></th><th><?php echo _("Mean"); ?></th><th><?php echo _("Stdev"); ?></th><th><?php echo _("&Sigma;h"); ?></th><th style='text-align:center'><?php echo _("Scale"); ?></th><th style='text-align:center'><?php echo _("Delta"); ?></th><th style='text-align:center'><?php echo _("Average"); ?></th><th><?php echo _("DP"); ?></th><th style="width:120px"></th></tr>
+                <tbody id="stats"></tbody>
+              </table>
+            </div>
+
             <button class="accordion"><b><?php echo _("Export"); ?></b></button>
               <div class="panel">
                 <button class="btn" id="showcsv" >CSV Output +</button>
@@ -245,10 +244,10 @@ div.panel.show {
     var acc = document.getElementsByClassName("accordion");
     var i;
     for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function(){
+        acc[i].onclick = function() {
             this.classList.toggle("active");
             this.nextElementSibling.classList.toggle("show");
-        }
+		    }
     }
     // End: accordion effect
 
