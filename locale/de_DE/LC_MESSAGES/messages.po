@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: emoncms3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-14 13:17+0100\n"
-"PO-Revision-Date: 2017-02-14 20:36+0100\n"
+"POT-Creation-Date: 2017-02-16 09:54+0100\n"
+"PO-Revision-Date: 2017-02-16 09:57+0100\n"
 "Last-Translator: Frank Dille\n"
 "Language-Team: @sumpfing <anne@sumpfing.de>\n"
 "Language: de_DE\n"
@@ -16,6 +16,22 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../../..\n"
 
+#: ../../../embed.php:33 ../../../view.php:150
+msgid "D"
+msgstr "T"
+
+#: ../../../embed.php:34 ../../../view.php:151
+msgid "W"
+msgstr "W"
+
+#: ../../../embed.php:35 ../../../view.php:152
+msgid "M"
+msgstr "M"
+
+#: ../../../embed.php:36 ../../../view.php:153
+msgid "Y"
+msgstr "J"
+
 #: ../../../graph_constjs.php:18 ../../../graph_langjs.php:38
 msgid "Jan"
 msgstr "Jan"
@@ -24,7 +40,7 @@ msgstr "Jan"
 msgid "Feb"
 msgstr "Feb"
 
-#: ../../../graph_constjs.php:18 ../../../graph_langjs.php:45
+#: ../../../graph_constjs.php:18 ../../../graph_langjs.php:46
 msgid "Mar"
 msgstr "Mär"
 
@@ -33,7 +49,7 @@ msgid "Apr"
 msgstr "Apr"
 
 #: ../../../graph_constjs.php:19 ../../../graph_constjs.php:23
-#: ../../../graph_langjs.php:46
+#: ../../../graph_langjs.php:47
 msgid "May"
 msgstr "Mai"
 
@@ -49,15 +65,15 @@ msgstr "Jul"
 msgid "Aug"
 msgstr "Aug"
 
-#: ../../../graph_constjs.php:20 ../../../graph_langjs.php:54
+#: ../../../graph_constjs.php:20 ../../../graph_langjs.php:56
 msgid "Sep"
 msgstr "Sep"
 
-#: ../../../graph_constjs.php:21 ../../../graph_langjs.php:49
+#: ../../../graph_constjs.php:21 ../../../graph_langjs.php:50
 msgid "Oct"
 msgstr "Okt"
 
-#: ../../../graph_constjs.php:21 ../../../graph_langjs.php:48
+#: ../../../graph_constjs.php:21 ../../../graph_langjs.php:49
 msgid "Nov"
 msgstr "Nov"
 
@@ -109,23 +125,23 @@ msgstr "November"
 msgid "December"
 msgstr "Dezember"
 
-#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:55
+#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:57
 msgid "Sun"
 msgstr "So"
 
-#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:47
+#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:48
 msgid "Mon"
 msgstr "Mo"
 
-#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:57
+#: ../../../graph_constjs.php:30 ../../../graph_langjs.php:59
 msgid "Tue"
 msgstr "Di"
 
-#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:58
+#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:60
 msgid "Wed"
 msgstr "Mi"
 
-#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:56
+#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:58
 msgid "Thu"
 msgstr "Do"
 
@@ -133,7 +149,7 @@ msgstr "Do"
 msgid "Fri"
 msgstr "Fr"
 
-#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:52
+#: ../../../graph_constjs.php:31 ../../../graph_langjs.php:54
 msgid "Sat"
 msgstr "Sa"
 
@@ -173,7 +189,7 @@ msgstr "Balken"
 msgid "g"
 msgstr "G"
 
-#: ../../../graph_langjs.php:37 ../../../view.php:154
+#: ../../../graph_langjs.php:37 ../../../view.php:131
 msgid "Histogram"
 msgstr "Histogramm"
 
@@ -182,38 +198,46 @@ msgid "k"
 msgstr "K"
 
 #: ../../../graph_langjs.php:42
+msgid "Left axis"
+msgstr "Linke Achse"
+
+#: ../../../graph_langjs.php:43
 msgid "Length"
 msgstr "Länge"
 
-#: ../../../graph_langjs.php:43
+#: ../../../graph_langjs.php:44
 msgid "Lines"
 msgstr "Zeilen"
 
-#: ../../../graph_langjs.php:44
+#: ../../../graph_langjs.php:45
 msgid "m"
 msgstr "M"
 
-#: ../../../graph_langjs.php:50
+#: ../../../graph_langjs.php:51
 msgid "Please enter a name for the graph you wish to save"
 msgstr "Bitte einen Namen für die Grafik eingeben."
 
-#: ../../../graph_langjs.php:51
+#: ../../../graph_langjs.php:52
 msgid "Request error"
 msgstr "Request Fehler"
 
 #: ../../../graph_langjs.php:53
+msgid "Right axis"
+msgstr "Rechte Achse"
+
+#: ../../../graph_langjs.php:55
 msgid "Select graph"
 msgstr "Grafik wählen"
 
-#: ../../../graph_langjs.php:59
+#: ../../../graph_langjs.php:61
 msgid "Window"
 msgstr "Bereich"
 
-#: ../../../graph_langjs.php:62
+#: ../../../graph_langjs.php:64
 msgid "Graph"
 msgstr "Grafik"
 
-#: ../../../graph_langjs.php:63
+#: ../../../graph_langjs.php:65
 msgid "Saved graphs from graph module"
 msgstr "Gespeicherte Grafiken im Modul"
 
@@ -221,7 +245,7 @@ msgstr "Gespeicherte Grafiken im Modul"
 msgid "Graphs"
 msgstr "Grafiken"
 
-#: ../../../view.php:102
+#: ../../../view.php:103
 msgid "My Graphs"
 msgstr "Grafiken"
 
@@ -237,206 +261,190 @@ msgstr "Löschen"
 msgid "Save"
 msgstr "Speichern"
 
-#: ../../../view.php:115 ../../../view.php:211
+#: ../../../view.php:114 ../../../view.php:209
 msgid "Feeds"
 msgstr "Feeds"
 
-#: ../../../view.php:127
+#: ../../../view.php:125
 msgid "Data viewer"
 msgstr "Datenansicht"
 
-#: ../../../view.php:133
-msgid "D"
-msgstr "T"
-
-#: ../../../view.php:134
-msgid "W"
-msgstr "W"
-
-#: ../../../view.php:135
-msgid "M"
-msgstr "M"
-
-#: ../../../view.php:136
-msgid "Y"
-msgstr "J"
-
-#: ../../../view.php:143 ../../../view.php:231
-msgid "Show"
-msgstr "Anzeige"
-
-#: ../../../view.php:144
-msgid "missing data"
-msgstr "<abbr title=\"Skip\">fehlende Überspringen</abbr>"
-
-#: ../../../view.php:145
-msgid "legend"
-msgstr "Legende"
-
-#: ../../../view.php:146
-msgid "feed tag"
-msgstr "Feed-Tag"
-
-#: ../../../view.php:155 ../../../view.php:182 ../../../view.php:214
+#: ../../../view.php:132 ../../../view.php:174 ../../../view.php:212
 msgid "Type"
 msgstr "Typ"
 
-#: ../../../view.php:157
+#: ../../../view.php:134
 msgid "Time at value"
 msgstr "Zeit bei Wert"
 
-#: ../../../view.php:158
+#: ../../../view.php:135
 msgid "kWh at Power"
 msgstr "kWh bei Leistung"
 
-#: ../../../view.php:160
+#: ../../../view.php:137
 msgid "Resolution"
 msgstr "Auflösung"
 
-#: ../../../view.php:164
+#: ../../../view.php:141
 msgid "Back to main view"
 msgstr "Zurück zur Hauptansicht"
 
-#: ../../../view.php:173
+#: ../../../view.php:165
 msgid "Details"
 msgstr "Details"
 
-#: ../../../view.php:176
+#: ../../../view.php:168
 msgid "Start"
 msgstr "Von"
 
-#: ../../../view.php:179
+#: ../../../view.php:170
 msgid "End"
 msgstr "Bis"
 
-#: ../../../view.php:184
+#: ../../../view.php:176
 msgid "Fixed Interval"
 msgstr "Intervall"
 
-#: ../../../view.php:185
+#: ../../../view.php:177
 msgid "Daily"
 msgstr "Täglich"
 
-#: ../../../view.php:186
+#: ../../../view.php:178
 msgid "Weekly"
 msgstr "Wöchentlich"
 
-#: ../../../view.php:187
+#: ../../../view.php:179
 msgid "Monthly"
 msgstr "Monatlich"
 
-#: ../../../view.php:188
+#: ../../../view.php:180
 msgid "Annual"
 msgstr "Jährlich"
 
-#: ../../../view.php:193
+#: ../../../view.php:185
 msgid "Fix"
 msgstr "Fix."
 
-#: ../../../view.php:194
+#: ../../../view.php:186
 msgid "<abbr title='Limit to data interval'>Limit</abbr>"
-msgstr "<abbr title=\"Beschränken auf Datenintervall\">Grenze</abbr>"
+msgstr "<abbr title=\"Beschränken auf Datenintervall\">Limit.</abbr>"
 
-#: ../../../view.php:199
+#: ../../../view.php:190
 msgid "Y-axis"
 msgstr "Y-Achse"
 
-#: ../../../view.php:200
+#: ../../../view.php:191
 msgid "min"
 msgstr "Min"
 
-#: ../../../view.php:202
+#: ../../../view.php:193
 msgid "max"
 msgstr "Max"
 
-#: ../../../view.php:205
+#: ../../../view.php:196
 msgid "Reload"
 msgstr "Neu Laden"
 
-#: ../../../view.php:214
+#: ../../../view.php:200 ../../../view.php:228
+msgid "Show"
+msgstr "Anzeige"
+
+#: ../../../view.php:201
+msgid "missing data"
+msgstr "<abbr title=\"fehlende Überspringen\">Skip</abbr>"
+
+#: ../../../view.php:202
+msgid "legend"
+msgstr "Legende"
+
+#: ../../../view.php:203
+msgid "feed tag"
+msgstr "Feed-Tag"
+
+#: ../../../view.php:212
 msgid "Feed"
 msgstr "Feed"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Color"
 msgstr "Farbe"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Fill"
 msgstr "Füllen"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Quality"
 msgstr "<abbr title=\"Qualität\">Qt.</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Min"
 msgstr "Min"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Max"
 msgstr "Max"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Diff"
 msgstr "Diff"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Mean"
 msgstr "<abbr title=\"Mittelwert\">Mw.</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Stdev"
 msgstr "<abbr title=\"Standard Abweichung\">SD</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "&Sigma;h"
 msgstr "<abbr title=\"Mittelwert*Zeit (h)\">&Sigma;h</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Scale"
 msgstr "<abbr title=\"Skalieren\">*</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Delta"
 msgstr "<abbr title=\"Delta\">&Delta;</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "Average"
 msgstr "<abbr title=\"Durchschnitt\">&empty;</abbr>"
 
-#: ../../../view.php:214
+#: ../../../view.php:212
 msgid "DP"
 msgstr "DP"
 
-#: ../../../view.php:220
+#: ../../../view.php:217
 msgid "Export"
 msgstr "Export"
 
-#: ../../../view.php:223
+#: ../../../view.php:220
 msgid "Time format"
 msgstr "Zeitformat"
 
-#: ../../../view.php:225
+#: ../../../view.php:222
 msgid "Unix timestamp"
 msgstr "Unix Zeitstempel"
 
-#: ../../../view.php:226
+#: ../../../view.php:223
 msgid "Seconds since start"
 msgstr "Sekunden seit Start"
 
-#: ../../../view.php:227
+#: ../../../view.php:224
 msgid "Date-time string"
 msgstr "Datum/Zeit"
 
-#: ../../../view.php:229
+#: ../../../view.php:226
 msgid "Null values"
 msgstr "NULL Werte"
 
-#: ../../../view.php:232
+#: ../../../view.php:229
 msgid "Replace with last value"
 msgstr "Ersetzen mit letztem Wert"
 
-#: ../../../view.php:233
+#: ../../../view.php:230
 msgid "Remove whole line"
 msgstr "Zeile entfernen"

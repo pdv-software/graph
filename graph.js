@@ -148,12 +148,14 @@ function graph_init_editor()
                {
                    out += "<tr>";
                    var name = feedsbytag[tag][z].name;
+                   var tooltip = tagname;
                    if (name.length>20) {
+                       tooltip = name+" ("+tooltip+")";
                        name = name.substr(0,20)+"..";
                    }
-                   out += "<td>"+name+"</td>";
-                   out += "<td><input class='feed-select-left' feedid="+feedsbytag[tag][z].id+" type='checkbox'></td>";
-                   out += "<td><input class='feed-select-right' feedid="+feedsbytag[tag][z].id+" type='checkbox'></td>";
+                   out += "<td><span title='"+tooltip+"'>"+name+"</span></td>";
+                   out += "<td><input class='feed-select-left' feedid="+feedsbytag[tag][z].id+" type='checkbox' title='"+_Tr("Left axis")+"'></td>";
+                   out += "<td><input class='feed-select-right' feedid="+feedsbytag[tag][z].id+" type='checkbox' title='"+_Tr("Right axis")+"'></td>";
                    out += "</tr>";
                }
                out += "</tbody>";
